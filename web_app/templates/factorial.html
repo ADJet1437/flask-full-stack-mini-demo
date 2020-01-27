@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% block body %}
+
+<h2>Factorial function</h2>
+<small>Please input your value <b>n</b></small>
+
+<form>
+  <div class="row">
+    <div class="col">
+      <label>Input value &nbsp <b>n</b></label>
+      <input type="number" class="form-control" name="fac_input_n" id="fac_input_n" placeholder="Input integer n"
+      value="{{request.args.get('fac_input_n', '')}}" data-bv-integer-message="The value is not an integer"
+      min="0" max="170">
+    </div>
+    <div class="col">
+      <label>Result</label>
+        <output class="form-control" >{{ result if result }}</output>
+    </div>
+    <div class="col">
+      <label>Time</label>
+      <output class="form-control" >{{ time_consumed if time_consumed }}</output>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-lg btn-secondary" >Show result</button>
+    <button type="submit" class="btn btn-lg btn-secondary" onclick="resetValue()" >Reset</button>
+
+
+</form>
+
+<script>
+  function resetValue() {
+   document.getElementById("fac_input_n").value = "";
+}
+</script>
+
+
+
+{% endblock %}

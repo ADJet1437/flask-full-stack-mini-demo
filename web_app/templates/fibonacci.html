@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+{% block body %}
+
+<h2>Fibanacci sequence </h2>
+<small>Please input your value <b>n</b></small>
+
+<form id="inputForm" >
+  <div class="row">
+    <div class="col">
+      <label>Input value &nbsp <b>n</b></label>
+      <input type="number" class="form-control" name="fib_input" id="fib_input" placeholder="Input integer n"
+      value="{{request.args.get('fib_input', '')}}"  data-bv-integer-message="The value is not an integer"
+      min="1" max="170">
+    </div>
+    <div class="col">
+      <label>Result</label>
+        <output class="form-control" >{{ result if result }}</output>
+    </div>
+    <div class="col">
+      <label>Time</label>
+      <output class="form-control" >{{ time_consumed if time_consumed }}</output>
+    </div>
+  </div>
+    <button type="submit" class="btn btn-lg btn-secondary" >Get result</button>
+    <button type="submit" class="btn btn-lg btn-secondary" onclick="resetValue()" >Reset</button>
+
+</form>
+
+<script>
+  function resetValue() {
+   document.getElementById("fib_input").value = "";
+}
+</script>
+
+
+{% endblock %}

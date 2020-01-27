@@ -1,0 +1,44 @@
+{% extends "index.html" %}
+{% block body %}
+
+<h2>Ackermann function </h2>
+<small>Please input your value <b>m</b> and <b>n</b></small>
+
+<form>
+  <div class="row">
+    <div class="col">
+      <label>Input value &nbsp <b>m</b></label>
+      <input type="number" class="form-control" name="ack_input_m" id="ack_input_m" placeholder="Input value m"
+      value="{{request.args.get('ack_input_m', '')}}"
+      data-bv-integer-message="The value is not an integer" min="0" max="3">
+    </div>
+    <div class="col">
+      <label>Input value &nbsp <b>n</b></label>
+      <input type="number" class="form-control" name="ack_input_n" id="ack_input_n" placeholder="Input value n"
+      value="{{request.args.get('ack_input_n', '')}}"
+      data-bv-integer-message="The value is not an integer" min="0" max="6">
+    </div>
+    <div class="col">
+      <label>Result</label>
+        <output class="form-control" >{{ result if result }}</output>
+    </div>
+    <div class="col">
+      <label>Time</label>
+      <output class="form-control" >{{ time_consumed if time_consumed }}</output>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-lg btn-secondary">Show result</button>
+  <button type="submit" class="btn btn-lg btn-secondary" onclick="resetValue()">Reset</button>
+
+
+</form>
+
+<script>
+  function resetValue() {
+   document.getElementById("ack_input_m").value = "";
+   document.getElementById("ack_input_n").value = "";
+}
+</script>
+
+
+{% endblock %}

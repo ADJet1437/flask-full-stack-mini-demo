@@ -1,0 +1,91 @@
+<!doctpye html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ackermann, Factorial, Fibonacci test</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="/static/bootstrap-4.4.1-dist/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+        integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+        crossorigin="anonymous"></script>
+    <script src="static/bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom css for layout-->
+    <style>
+        body {
+          background: #444;
+          height: 100%;
+        }
+
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          min-height: 100vh;
+        }
+
+        h1, h2, small, label {
+        color: white;
+        }
+
+        /*
+         *  Responsive elements
+         */
+        @media only screen and (max-width: 640px)  {
+              h1 {
+                  font-size: 25px;
+              }
+              h2 {
+                  font-size: 16px;
+              }
+              small {
+                  front-size: 5px;
+              }
+              label {
+                  display: none;
+              }
+        }
+    </style>
+
+</head>
+
+<body class="text-center" >
+<div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Functions
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/fibonacci" onclick="">Fibonacci</a>
+          <a class="dropdown-item" href="/ackermann">Ackermann</a>
+          <a class="dropdown-item" href="/factorial">Factorial</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+    <div class="container">
+        <div class="container-fluid">
+            {% block body %}
+                <h1>Test our functions</h1>
+             {% endblock %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
