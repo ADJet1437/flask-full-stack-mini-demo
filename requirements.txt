@@ -1,0 +1,5 @@
+flask==1.1.1
+sympy==1.5
+pytest==2.9.1
+SQLAlchemy==1.1.6
+pymysql==0.9.3
