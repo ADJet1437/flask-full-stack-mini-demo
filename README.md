@@ -3,7 +3,7 @@
 Download the code and place somewhere on your machine, for example, /home/
 
 ```bash
-cd /home/klarna_assignment
+cd /home/flask-full-stack-mini-demo
 ```
 #### If you do not have docker installed
 If you do not want some packages installing on your local environment, I would recommend install `virtualenv`. (Following this link https://virtualenvwrapper.readthedocs.io/en/latest/ to setup your own virtual environment). It's also fine if you do not want a virtual environment, just run the following commands directly.
